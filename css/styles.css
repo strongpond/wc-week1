@@ -10224,3 +10224,9 @@ section.resume-section .resume-section-content {
   color: #fff;
   font-size: 2rem;
 }
+
+#favorites button {
+  background-color: transparent;
+  border-radius: 0.575rem;
+  margin-right: 3%;
+}
