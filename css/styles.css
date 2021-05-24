@@ -10230,3 +10230,8 @@ section.resume-section .resume-section-content {
   border-radius: 0.575rem;
   margin-right: 3%;
 }
+
+#favorites button:hover {
+  background-color: #b1b6bb;
+  border-color: #b1b6bb;
+}

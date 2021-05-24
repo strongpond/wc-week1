@@ -86,21 +86,47 @@
                 <div class="resume-section-content">
                     <h2 class="mb-4">Favorites</h2>
                     <div class="favorites-button text-center">
-                        <button class="subheading mb-0 text-center">activity</button>
-                        <button class="subheading mb-0 text-center">travel</button>
-                        <button class="subheading mb-0 text-center">volunteer</button>
-                        <button class="subheading mb-0 text-center">photograph</button>
+                        <button class="subheading mb-0 text-center" id="activityButton" onclick="activityImg()">activity</button>
+                        <button class="subheading mb-0 text-center" id="travelButton" onclick="travelImg()">travel</button>
+                        <button class="subheading mb-0 text-center" id="volunteerButton" onclick="volunteerImg()">volunteer</button>
+                        <button class="subheading mb-0 text-center" id="photographButton" onclick="photographImg()">photograph</button>
                     </div>
                     <div id="carousel">
-                        <figure id="spinner">
-                            <img src="assets/img/photograph/photograph1.jpg" alt>
-                            <img src="assets/img/photograph/photograph2.jpg" alt>
-                            <img src="assets/img/photograph/photograph3.jpg" alt>
-                            <img src="assets/img/photograph/photograph4.jpg" alt>
-                            <img src="assets/img/photograph/photograph5.jpg" alt>
-                            <img src="assets/img/photograph/photograph6.png" alt>
-                            <img src="assets/img/photograph/photograph7.jpg" alt>
-                            <img src="assets/img/photograph/photograph8.jpg" alt>
+                        <figure id="spinner90" class="imgHide">
+                            <div id="activityPhoto" class="imgHide" >
+                                <img src="assets/img/activity/activity2.JPG" alt>
+                                <img src="assets/img/activity/activity3.jpg" alt>
+                                <img src="assets/img/activity/activity4.JPG" alt>
+                                <img src="assets/img/activity/activity5.jpg" alt>
+                            </div>
+                            <div id="travelPhoto" class="imgHide" style="display: none;">
+                                <img src="assets/img/travel/travel1.jpg" alt>
+                                <img src="assets/img/travel/travel3.jpg" alt>
+                                <img src="assets/img/travel/travel5.JPG" alt>
+                                <img src="assets/img/travel/travel6.JPG" alt>
+                            </div>
+                        </figure>
+                        <figure id="spinner60" class="imgHide" style="display: none;">
+                            <div id="volunteerPhoto" class="imgHide" style="display: none;">
+                                <img src="assets/img/volunteer/volunteer2.JPG" alt>
+                                <img src="assets/img/volunteer/volunteer3.JPG" alt>
+                                <img src="assets/img/volunteer/volunteer4.JPG" alt>
+                                <img src="assets/img/volunteer/volunteer5.JPG" alt>
+                                <img src="assets/img/volunteer/volunteer6.JPG" alt>
+                                <img src="assets/img/volunteer/volunteer8.jpg" alt>
+                            </div>
+                        </figure>
+                        <figure id="spinner" class="imgHide" style="display: none;">
+                            <div id="photographPhoto" class="imgHide" style="display: none;">
+                                <img src="assets/img/photograph/photograph1.jpg" alt>
+                                <img src="assets/img/photograph/photograph2.jpg" alt>
+                                <img src="assets/img/photograph/photograph3.jpg" alt>
+                                <img src="assets/img/photograph/photograph4.jpg" alt>
+                                <img src="assets/img/photograph/photograph5.jpg" alt>
+                                <img src="assets/img/photograph/photograph6.png" alt>
+                                <img src="assets/img/photograph/photograph7.jpg" alt>
+                                <img src="assets/img/photograph/photograph8.jpg" alt>
+                            </div>
                         </figure>
                     </div>
                     <span style="float:left" class="ss-icon" onclick="galleryspin('')">&lt;</span>
@@ -132,5 +158,46 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js" ></script>
+        <script>
+            function activityImg() {
+                const img = document.getElementsByClassName("imgHide");
+                for(let i=0; i<img.length;i++){
+                    const item = img.item(i);
+                    item.style.display='none';
+                }
+                document.getElementById("spinner90").style.display = 'block';
+                document.getElementById("activityPhoto").style.display = 'block';
+            }
+
+            function travelImg() {
+                const img = document.getElementsByClassName("imgHide");
+                for(let i=0; i<img.length;i++){
+                    const item = img.item(i);
+                    item.style.display='none';
+                }
+                document.getElementById("spinner90").style.display = 'block';
+                document.getElementById("travelPhoto").style.display = 'block';
+            }
+
+            function volunteerImg() {
+                const img = document.getElementsByClassName("imgHide");
+                for(let i=0; i<img.length;i++){
+                    const item = img.item(i);
+                    item.style.display='none';
+                }
+                document.getElementById("spinner60").style.display = 'block';
+                document.getElementById("volunteerPhoto").style.display = 'block';
+            }
+
+            function photographImg() {
+                const img = document.getElementsByClassName("imgHide");
+                for(let i=0; i<img.length;i++){
+                    const item = img.item(i);
+                    item.style.display='none';
+                }
+                document.getElementById("spinner").style.display = 'block';
+                document.getElementById("photographPhoto").style.display = 'block';
+            }
+        </script>
     </body>
 </html>
