@@ -14,6 +14,8 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <link href="carousel.css" rel="stylesheet" />
+        <script src="3d-carousel.js" type="text/javascript"></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -83,57 +85,52 @@
             <section class="resume-section" id="favorites" >
                 <div class="resume-section-content">
                     <h2 class="mb-4">Favorites</h2>
-                    <div class="d-flex flex-column flex-md-row mb-4">
-                        <span class="mr-1">
-                            <div class="subheading mb-0">activity</div>
-                            <div class="imgwrapper">
-                                <img class="img-c" src="assets/img/activity/activity2.JPG">
-                                <img class="img-c" src="assets/img/activity/activity3.jpg">
-                                <img class="img-c" src="assets/img/activity/activity4.JPG">
-                                <img class="img-c" src="assets/img/activity/activity5.jpg">
-                                
-                            </div>
-                        </span>
-                        <span class="flex-shrink-0" style="padding-left: 0rem;">
-                            <div class="subheading mb-0">travel</div>
-                            <div class="imgwrapper">
-                                <img class="img-c" src="assets/img/travel/travel1.jpg">
-                                <img class="img-c" src="assets/img/travel/travel3.jpg">
-                                <img class="img-c" src="assets/img/travel/travel5.JPG">
-                                <img class="img-c" src="assets/img/travel/travel6.JPG">
-                            </div>
-                        </span>
+                    <div class="favorites-button text-center">
+                        <button class="subheading mb-0 text-center" id="activityButton" onclick="activityImg()">activity</button>
+                        <button class="subheading mb-0 text-center" id="travelButton" onclick="travelImg()">travel</button>
+                        <button class="subheading mb-0 text-center" id="volunteerButton" onclick="volunteerImg()">volunteer</button>
+                        <button class="subheading mb-0 text-center" id="photographButton" onclick="photographImg()">photograph</button>
                     </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-4">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-0">volunteer</div>
-                            <div class="imgwrapper">
-                                <img class="img-a" src="assets/img/volunteer/volunteer2.JPG">
-                                <img class="img-a" src="assets/img/volunteer/volunteer3.JPG">
-                                <img class="img-a" src="assets/img/volunteer/volunteer4.JPG">
-                                <img class="img-a" src="assets/img/volunteer/volunteer5.JPG">
-                                <img class="img-a" src="assets/img/volunteer/volunteer6.JPG">
-                                <img class="img-a" src="assets/img/volunteer/volunteer8.jpg">
-                                
+                    <div id="carousel">
+                        <figure id="spinner90" class="imgHide">
+                            <div id="activityPhoto" class="imgHide" >
+                                <img src="assets/img/activity/activity2.JPG" alt>
+                                <img src="assets/img/activity/activity3.jpg" alt>
+                                <img src="assets/img/activity/activity4.JPG" alt>
+                                <img src="assets/img/activity/activity5.jpg" alt>
                             </div>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-0">photograph</div>
-                            <div class="imgwrapper">
-                                <img class="img-b" src="assets/img/photograph/photograph1.jpg">
-                                <img class="img-b" src="assets/img/photograph/photograph2.JPG">
-                                <img class="img-b" src="assets/img/photograph/photograph3.JPG">
-                                <img class="img-b" src="assets/img/photograph/photograph4.JPG">
-                                <img class="img-b" src="assets/img/photograph/photograph5.JPG">
-                                <img class="img-b" src="assets/img/photograph/photograph6.png">
-                                <img class="img-b" src="assets/img/photograph/photograph7.jpg">
-                                <img class="img-b" src="assets/img/photograph/photograph8.JPG">
-                                
+                            <div id="travelPhoto" class="imgHide" style="display: none;">
+                                <img src="assets/img/travel/travel1.jpg" alt>
+                                <img src="assets/img/travel/travel3.jpg" alt>
+                                <img src="assets/img/travel/travel5.JPG" alt>
+                                <img src="assets/img/travel/travel6.JPG" alt>
                             </div>
-                        </div>
+                        </figure>
+                        <figure id="spinner60" class="imgHide" style="display: none;">
+                            <div id="volunteerPhoto" class="imgHide" style="display: none;">
+                                <img src="assets/img/volunteer/volunteer2.JPG" alt>
+                                <img src="assets/img/volunteer/volunteer3.JPG" alt>
+                                <img src="assets/img/volunteer/volunteer4.JPG" alt>
+                                <img src="assets/img/volunteer/volunteer5.JPG" alt>
+                                <img src="assets/img/volunteer/volunteer6.JPG" alt>
+                                <img src="assets/img/volunteer/volunteer8.jpg" alt>
+                            </div>
+                        </figure>
+                        <figure id="spinner" class="imgHide" style="display: none;">
+                            <div id="photographPhoto" class="imgHide" style="display: none;">
+                                <img src="assets/img/photograph/photograph1.jpg" alt>
+                                <img src="assets/img/photograph/photograph2.JPG" alt>
+                                <img src="assets/img/photograph/photograph3.JPG" alt>
+                                <img src="assets/img/photograph/photograph4.JPG" alt>
+                                <img src="assets/img/photograph/photograph5.JPG" alt>
+                                <img src="assets/img/photograph/photograph6.png" alt>
+                                <img src="assets/img/photograph/photograph7.jpg" alt>
+                                <img src="assets/img/photograph/photograph8.JPG" alt>
+                            </div>
+                        </figure>
                     </div>
+                    <span style="float:left" class="ss-icon" onclick="galleryspin('')">&lt;</span>
+                    <span style="float:right" class="ss-icon" onclick="galleryspin('-')">&gt;</span>
                 </div>
             </section>
             <!-- contact-->
@@ -160,6 +157,47 @@
         <!-- Third party plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="js/scripts.js" ></script>
+        <script>
+            function activityImg() {
+                const img = document.getElementsByClassName("imgHide");
+                for(let i=0; i<img.length;i++){
+                    const item = img.item(i);
+                    item.style.display='none';
+                }
+                document.getElementById("spinner90").style.display = 'block';
+                document.getElementById("activityPhoto").style.display = 'block';
+            }
+
+            function travelImg() {
+                const img = document.getElementsByClassName("imgHide");
+                for(let i=0; i<img.length;i++){
+                    const item = img.item(i);
+                    item.style.display='none';
+                }
+                document.getElementById("spinner90").style.display = 'block';
+                document.getElementById("travelPhoto").style.display = 'block';
+            }
+
+            function volunteerImg() {
+                const img = document.getElementsByClassName("imgHide");
+                for(let i=0; i<img.length;i++){
+                    const item = img.item(i);
+                    item.style.display='none';
+                }
+                document.getElementById("spinner60").style.display = 'block';
+                document.getElementById("volunteerPhoto").style.display = 'block';
+            }
+
+            function photographImg() {
+                const img = document.getElementsByClassName("imgHide");
+                for(let i=0; i<img.length;i++){
+                    const item = img.item(i);
+                    item.style.display='none';
+                }
+                document.getElementById("spinner").style.display = 'block';
+                document.getElementById("photographPhoto").style.display = 'block';
+            }
+        </script>
     </body>
 </html>
