@@ -86,7 +86,7 @@
                 <div class="resume-section-content">
                     <h2 class="mb-4">Favorites</h2>
                     <div class="favorites-button text-center">
-                        <button class="subheading mb-0 text-center" id="activityButton" onclick="activityImg()">activity</button>
+                        <button class="subheading mb-0 text-center" id="activityButton" style="color: #133d68;" onclick="activityImg()">activity</button>
                         <button class="subheading mb-0 text-center" id="travelButton" onclick="travelImg()">travel</button>
                         <button class="subheading mb-0 text-center" id="volunteerButton" onclick="volunteerImg()">volunteer</button>
                         <button class="subheading mb-0 text-center" id="photographButton" onclick="photographImg()">photograph</button>
@@ -99,6 +99,8 @@
                                 <img src="assets/img/activity/activity4.JPG" alt>
                                 <img src="assets/img/activity/activity5.jpg" alt>
                             </div>
+                        </figure>
+                        <figure id="spinner90b" class="imgHide" style="display: none;">
                             <div id="travelPhoto" class="imgHide" style="display: none;">
                                 <img src="assets/img/travel/travel1.jpg" alt>
                                 <img src="assets/img/travel/travel3.jpg" alt>
@@ -129,8 +131,8 @@
                             </div>
                         </figure>
                     </div>
-                    <span style="float:left" class="ss-icon" onclick="galleryspin('')">&lt;</span>
-                    <span style="float:right" class="ss-icon" onclick="galleryspin('-')">&gt;</span>
+                    <span style="float:left" id="left-spin" class="ss-icon" >&lt;</span>
+                    <span style="float:right" id="right-spin" class="ss-icon" >&gt;</span>
                 </div>
             </section>
             <!-- contact-->
@@ -159,44 +161,70 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js" ></script>
         <script>
-            function activityImg() {
+
+            let isClick = false;
+
+            document.getElementById('left-spin').onclick = function(){
+                galleryspin('',isClick);
+                if(!isClick) isClick = true;
+            }
+            document.getElementById('right-spin').onclick = function(){
+                galleryspin('-',isClick);
+                if(!isClick) isClick = true;
+            }
+
+
+            function hideAllImg() {
+                isClick = false;
                 const img = document.getElementsByClassName("imgHide");
                 for(let i=0; i<img.length;i++){
                     const item = img.item(i);
                     item.style.display='none';
                 }
+            }
+
+            function hideAllButton() {
+                const button = document.querySelectorAll(".favorites-button .subheading");
+                for(let j=0; j<button.length; j++){
+                    const item = button.item(j);
+                    item.style.color='#fff';
+                }
+            }
+
+            function activityImg() {
+                hideAllImg();
+                hideAllButton();
+                document.getElementById("activityButton").style.color = '#133d68';
                 document.getElementById("spinner90").style.display = 'block';
                 document.getElementById("activityPhoto").style.display = 'block';
+                spinner90.setAttribute("style","-webkit-transform: rotateY(0deg); -moz-transform: rotateY(0deg); transform: rotateY(0deg);");
             }
 
             function travelImg() {
-                const img = document.getElementsByClassName("imgHide");
-                for(let i=0; i<img.length;i++){
-                    const item = img.item(i);
-                    item.style.display='none';
-                }
-                document.getElementById("spinner90").style.display = 'block';
+                hideAllImg();
+                hideAllButton();
+                document.getElementById("travelButton").style.color = '#133d68';
+                document.getElementById("spinner90b").style.display = 'block';
                 document.getElementById("travelPhoto").style.display = 'block';
+                spinner90b.setAttribute("style","-webkit-transform: rotateY(0deg); -moz-transform: rotateY(0deg); transform: rotateY(0deg);");
             }
 
             function volunteerImg() {
-                const img = document.getElementsByClassName("imgHide");
-                for(let i=0; i<img.length;i++){
-                    const item = img.item(i);
-                    item.style.display='none';
-                }
+                hideAllImg();
+                hideAllButton();
+                document.getElementById("volunteerButton").style.color = '#133d68';
                 document.getElementById("spinner60").style.display = 'block';
                 document.getElementById("volunteerPhoto").style.display = 'block';
+                spinner60.setAttribute("style","-webkit-transform: rotateY(0deg); -moz-transform: rotateY(0deg); transform: rotateY(0deg);");
             }
 
             function photographImg() {
-                const img = document.getElementsByClassName("imgHide");
-                for(let i=0; i<img.length;i++){
-                    const item = img.item(i);
-                    item.style.display='none';
-                }
+                hideAllImg();
+                hideAllButton();
+                document.getElementById("photographButton").style.color = '#133d68';
                 document.getElementById("spinner").style.display = 'block';
                 document.getElementById("photographPhoto").style.display = 'block';
+                spinner.setAttribute("style","-webkit-transform: rotateY(0deg); -moz-transform: rotateY(0deg); transform: rotateY(0deg);");
             }
         </script>
     </body>

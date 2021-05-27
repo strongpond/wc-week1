@@ -10188,7 +10188,7 @@ section.resume-section .resume-section-content {
 
 #favorites .subheading {
   font-size: 2rem;
-  color: #343a40;
+  color: #fff;
 }
 
 #favorites.resume-section {
@@ -10227,11 +10227,17 @@ section.resume-section .resume-section-content {
 
 #favorites button {
   background-color: transparent;
-  border-radius: 0.575rem;
+  color: #fff;
+  border: none;
   margin-right: 3%;
 }
 
 #favorites button:hover {
-  background-color: #b1b6bb;
-  border-color: #b1b6bb;
+  background-color: transparent;
+  color: #133d68;
+}
+
+#favorites button:focus {
+  background-color: transparent;
+  color: #133d68;
 }

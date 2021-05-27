@@ -23,6 +23,12 @@ div#carousel {
     height: 500px; 
     transform-origin: 50% 50% -500px; 
     transition: 1s; 
+  }
+  figure#spinner90b { 
+    transform-style: preserve-3d; 
+    height: 500px; 
+    transform-origin: 50% 50% -500px; 
+    transition: 1s;
   } 
   figure#spinner img { 
     width: 300px; max-width: 425px;
@@ -45,6 +51,13 @@ div#carousel {
     transform-origin: 50% 50% -500px;
     outline:1px solid transparent; 
   }
+  figure#spinner90b img { 
+    width: 300px; max-width: 425px;
+    height: 300px; 
+    position: absolute; left: 40%;
+    transform-origin: 50% 50% -500px;
+    outline:1px solid transparent; 
+  }
   figure#spinner img:nth-child(1) { transform:rotateY(0deg);   }
   figure#spinner img:nth-child(2) { transform: rotateY(-45deg); }
   figure#spinner img:nth-child(3) { transform: rotateY(-90deg); }
@@ -58,6 +71,11 @@ div#carousel {
   figure#spinner90 img:nth-child(2) { transform: rotateY(-90deg); }
   figure#spinner90 img:nth-child(3) { transform: rotateY(-180deg); }
   figure#spinner90 img:nth-child(4) { transform: rotateY(-270deg); }
+
+  figure#spinner90b img:nth-child(1) { transform:rotateY(0deg);   }
+  figure#spinner90b img:nth-child(2) { transform: rotateY(-90deg); }
+  figure#spinner90b img:nth-child(3) { transform: rotateY(-180deg); }
+  figure#spinner90b img:nth-child(4) { transform: rotateY(-270deg); }
 
   figure#spinner60 img:nth-child(1) { transform:rotateY(0deg);   }
   figure#spinner60 img:nth-child(2) { transform: rotateY(-60deg); }

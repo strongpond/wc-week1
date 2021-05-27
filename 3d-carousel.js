@@ -1,5 +1,6 @@
 var angle = 0;
-function galleryspin(sign) { 
+function galleryspin(sign,isClick) { 
+    if(!isClick) angle =0; 
     if (document.getElementById("activityPhoto").style.display !=='none') {
         if (!sign) { 
             angle = angle + 90; } 
@@ -13,7 +14,7 @@ function galleryspin(sign) {
             angle = angle + 90; } 
         else { 
             angle = angle - 90; }
-        spinner90.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
+        spinner90b.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
     }
 
     else if (document.getElementById("volunteerPhoto").style.display !=='none') {
